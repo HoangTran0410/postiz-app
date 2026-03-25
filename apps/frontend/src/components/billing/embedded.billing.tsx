@@ -13,7 +13,6 @@ import { modeEmitter } from '@gitroom/frontend/components/layout/mode.component'
 import useCookie from 'react-use-cookie';
 import { Button } from '@gitroom/react/form/button';
 import dayjs from 'dayjs';
-import Image from 'next/image';
 import { useToaster } from '@gitroom/react/toaster/toaster';
 import { useT } from '@gitroom/react/translation/get.transation.service.client';
 

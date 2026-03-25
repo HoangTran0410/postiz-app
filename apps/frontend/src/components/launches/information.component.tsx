@@ -4,7 +4,7 @@ import React, { FC, Fragment, useMemo } from 'react';
 import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
 import { useShallow } from 'zustand/react/shallow';
 import clsx from 'clsx';
-import Image from 'next/image';
+import SafeImage from '@gitroom/react/helpers/safe.image';
 import { capitalize } from 'lodash';
 import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
@@ -191,7 +191,7 @@ export const InformationComponent: FC<{
               {selectedIntegrations.map((p, index) => (
                 <Fragment key={p.integration.id}>
                   <div>
-                    <Image
+                    <SafeImage
                       src={`/icons/platforms/${p.integration.identifier}.png`}
                       alt={p.integration.name}
                       className="rounded-[4px] w-[16px] h-[16px] min-w-[16px] min-h-[16px]"

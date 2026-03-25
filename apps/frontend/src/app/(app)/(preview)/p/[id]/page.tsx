@@ -2,7 +2,7 @@ import { internalFetch } from '@gitroom/helpers/utils/internal.fetch';
 export const dynamic = 'force-dynamic';
 import { Metadata } from 'next';
 import { isGeneralServerSide } from '@gitroom/helpers/utils/is.general.server.side';
-import Image from 'next/image';
+import SafeImage from '@gitroom/react/helpers/safe.image';
 import Link from 'next/link';
 import { CommentsComponents } from '@gitroom/frontend/components/preview/comments.components';
 import dayjs from 'dayjs';
@@ -55,7 +55,7 @@ export default async function Auth(
                   className="text-2xl flex items-center justify-center gap-[10px] text-textColor order-1"
                 >
                   <div className="max-w-[55px]">
-                    <Image
+                    <SafeImage
                       src={'/postiz.svg'}
                       width={55}
                       height={55}

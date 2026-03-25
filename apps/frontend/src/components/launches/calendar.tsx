@@ -42,7 +42,7 @@ import { useUser } from '@gitroom/frontend/components/layout/user.context';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import { groupBy, random, sortBy } from 'lodash';
-import Image from 'next/image';
+import SafeImage from '@gitroom/react/helpers/safe.image';
 import { extend } from 'dayjs';
 import { isUSCitizen } from './helpers/isuscitizen.utils';
 import { useInterval } from '@mantine/hooks';
@@ -908,7 +908,7 @@ export const CalendarColumn: FC<{
                           'relative w-[34px] h-[34px] rounded-[8px] flex justify-center items-center filter transition-all duration-500'
                         )}
                       >
-                        <Image
+                        <SafeImage
                           src={
                             selectedIntegrations.picture || '/no-picture.jpg'
                           }
@@ -924,7 +924,7 @@ export const CalendarColumn: FC<{
                             width={20}
                           />
                         ) : (
-                          <Image
+                          <SafeImage
                             src={`/icons/platforms/${selectedIntegrations.identifier}.png`}
                             className="rounded-[8px] absolute z-10 -bottom-[5px] -end-[5px] border border-fifth"
                             alt={selectedIntegrations.identifier}

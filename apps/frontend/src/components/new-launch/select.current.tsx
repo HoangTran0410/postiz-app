@@ -6,7 +6,7 @@ import {
   useLaunchStore,
 } from '@gitroom/frontend/components/new-launch/store';
 import clsx from 'clsx';
-import Image from 'next/image';
+import SafeImage from '@gitroom/react/helpers/safe.image';
 import { useShallow } from 'zustand/react/shallow';
 import { GlobalIcon } from '@gitroom/frontend/components/ui/icons';
 import { useT } from '@gitroom/react/translation/get.transation.service.client';
@@ -148,7 +148,7 @@ export const SelectCurrent: FC = () => {
                   'relative w-full h-full rounded-full flex justify-center items-center filter transition-all duration-500'
                 )}
               >
-                <Image
+                <SafeImage
                   src={integration.picture || '/no-picture.jpg'}
                   className="rounded-full min-w-[26px]"
                   alt={integration.identifier}
@@ -166,7 +166,7 @@ export const SelectCurrent: FC = () => {
                     width={12}
                   />
                 ) : (
-                  <Image
+                  <SafeImage
                     src={`/icons/platforms/${integration.identifier}.png`}
                     className="min-w-[12px] min-h-[12px] rounded-[3px] absolute z-10 bottom-[6px] end-[6px]"
                     alt={integration.identifier}
